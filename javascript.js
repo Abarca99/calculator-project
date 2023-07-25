@@ -31,28 +31,46 @@ buttons.forEach(button => {
 operand.forEach(operatorButton =>{
     operatorButton.addEventListener('click',()=>{
         operator = operatorButton.textContent;
-        previousNumber = nextNumber;
-        nextNumber = '';
+        if(previousNumber == ''){
+            previousNumber = nextNumber;
+            nextNumber = '';
+        }
+        else{
+            previousNumber = previousNumber;
+        }
+
     })
 })
 
 function add(num1,num2){
-    let result = parseInt(num1) + parseInt(num2)
-    console.log(result);
+    let numbers = parseInt(num1) + parseInt(num2)
+    previousNumber = numbers.toString();
+    console.log(previousNumber);
+    operator = ''
+    nextNumber = ''
 }
 
 
 function subtract(num1,num2){
-    let result = parseInt(num1) - parseInt(num2)
-    console.log(result);
+    let numbers = parseInt(num1) - parseInt(num2)
+    previousNumber = numbers.toString();
+    console.log(previousNumber);
+    operator = '';
+    nextNumber = '';
 }
 
 function multiply(num1,num2){
-    let result = parseInt(num1) * parseInt(num2)
-    console.log(result);
+    let numbers = parseInt(num1) * parseInt(num2)
+    previousNumber = numbers.toString();
+    console.log(previousNumber);
+    operator = '';
+    nextNumber = '';
 }
 
 function divide(num1,num2){
-    let result = parseInt(num1) / parseInt(num2)
-    console.log(result);
+    let numbers = parseInt(num1) / parseInt(num2)
+    previousNumber = numbers.toString();
+    console.log(previousNumber);
+    operator = '';
+    nextNumber = '';
 }
