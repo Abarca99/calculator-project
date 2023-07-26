@@ -32,7 +32,7 @@ body {
 .result {
     display: flex;
     overflow: auto;
-    text-overflow:clip;
+    text-overflow:ellipsis;
     line-height: 1em; /* a */
     max-height: 1em;
     justify-content: flex-end;
@@ -40,11 +40,12 @@ body {
     padding-bottom: 20px;
     height: 90px;
     font-weight: bolder;
-    font-size: 35px;
+    font-size: 50px;
     background-color: whitesmoke;
     border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .buttons {
@@ -66,6 +67,7 @@ button {
     background-color: gainsboro;
     border-color: aliceblue;
     border-style: hidden;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
 }
 

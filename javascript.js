@@ -11,7 +11,8 @@ let outputString = '';
 equals.addEventListener('click',()=>{
     outputString = previousNumber;
     result.innerText = outputString;
-     resetInputs();
+    nextNumber = '';
+    operator = '';
 })
 
 clear.addEventListener('click',()=>{
