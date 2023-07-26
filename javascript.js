@@ -1,13 +1,28 @@
-const buttons = document.querySelectorAll('.numbers')
-const operand = document.querySelectorAll('.operand')
-const addition = document.getElementById('addition')
+const buttons = document.querySelectorAll('.numbers');
+const operand = document.querySelectorAll('.operand');
+const result = document.querySelector('.result');
+const equals = document.getElementById('equals')
+const clear = document.getElementById('clear')
 let previousNumber = '';
 let nextNumber = '';
 let operator = '';
+let outputString = '';
 
+equals.addEventListener('click',()=>{
+    outputString = previousNumber;
+    result.innerText = outputString;
+     resetInputs();
+})
+
+clear.addEventListener('click',()=>{
+     resetInputs();
+     result.innerText = outputString;
+})
 
 buttons.forEach(button => {
     button.addEventListener('click',()=>{
+        outputString += '' + button.textContent;
+        result.innerText = outputString;
         nextNumber += button.textContent;
         if(previousNumber && nextNumber && operator){
             switch (operator){
@@ -31,6 +46,9 @@ buttons.forEach(button => {
 operand.forEach(operatorButton =>{
     operatorButton.addEventListener('click',()=>{
         operator = operatorButton.textContent;
+        outputString += ' ' + operator + ' '
+        result.innerText = outputString;
+
         if(previousNumber == ''){
             previousNumber = nextNumber;
             nextNumber = '';
@@ -42,19 +60,25 @@ operand.forEach(operatorButton =>{
     })
 })
 
+function resetInputs(){
+     previousNumber = '';
+     nextNumber = '';
+     operator = '';
+     outputString = ''
+}
+
 function add(num1,num2){
     let numbers = parseInt(num1) + parseInt(num2)
     previousNumber = numbers.toString();
-    console.log(previousNumber);
+    console.log(previousNumber + ' result');
     operator = ''
     nextNumber = ''
 }
 
-
 function subtract(num1,num2){
     let numbers = parseInt(num1) - parseInt(num2)
     previousNumber = numbers.toString();
-    console.log(previousNumber);
+    console.log(previousNumber + ' result');
     operator = '';
     nextNumber = '';
 }
@@ -62,7 +86,7 @@ function subtract(num1,num2){
 function multiply(num1,num2){
     let numbers = parseInt(num1) * parseInt(num2)
     previousNumber = numbers.toString();
-    console.log(previousNumber);
+    console.log(previousNumber + ' result');
     operator = '';
     nextNumber = '';
 }
@@ -70,7 +94,7 @@ function multiply(num1,num2){
 function divide(num1,num2){
     let numbers = parseInt(num1) / parseInt(num2)
     previousNumber = numbers.toString();
-    console.log(previousNumber);
+    console.log(previousNumber + ' result');
     operator = '';
     nextNumber = '';
 }

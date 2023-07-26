@@ -20,7 +20,7 @@ body {
     justify-self: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: goldenrod;
+    background-color: lightseagreen;
     border: 15px;
     width: 400px;
     min-width: 400px;
@@ -30,12 +30,21 @@ body {
 }
 
 .result {
+    display: flex;
+    overflow: auto;
+    text-overflow:clip;
+    line-height: 1em; /* a */
+    max-height: 1em;
+    justify-content: flex-end;
     padding-top: 20px;
-    text-align: end;
+    padding-bottom: 20px;
     height: 90px;
-    font-size: 60px;
+    font-weight: bolder;
+    font-size: 35px;
     background-color: whitesmoke;
     border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .buttons {
@@ -56,5 +65,19 @@ button {
     flex-wrap: wrap;
     background-color: gainsboro;
     border-color: aliceblue;
+    border-style: hidden;
     
+}
+
+.operand {
+    background-color: lightcoral;
+    border-style: hidden;
+}
+
+#clear {
+    background-color: lightgoldenrodyellow;
+}
+
+#equals {
+    background-color: lightgreen;
 }
